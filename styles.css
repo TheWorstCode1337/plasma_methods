@@ -1,0 +1,567 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  height: 435vh;
+  background-color: #090a0f;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat;
+}
+
+.lamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  min-width: 100vw;
+  z-index: -200;
+}
+
+.lava {
+  filter: url("#goo");
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.blob {
+  filter: blur(15px);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.27);
+  /* Other sample colors:
+  Orange: #e8630a
+  Pink: #EA3281
+  Fuscia: #E71669
+  Purple: #661BAC
+  Yellow: #FDC600
+  Kermit green: #75AC25
+  Light blue: #3283B5
+  Dark blue: #0A5D9A
+  Gunmetal: #232F37
+  BGLight: #1B2735
+  BGDark: #090a0f
+  Want more colors? check out https://coolors.co/ for inspiration.
+  */
+  position: absolute;
+}
+
+.blob:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  left: 5%;
+  bottom: -100%;
+  animation: wobble 4s ease-in-out alternate infinite, blob-one ease-in-out 13s infinite;
+}
+
+.blob:nth-child(2) {
+  width: 330px;
+  height: 330px;
+  right: 10%;
+  bottom: -100%;
+  animation: wobble 5s ease-in-out alternate infinite, blob-two ease-in-out 22s infinite;
+}
+
+.blob:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  bottom: -100%;
+  left: 89%;
+  animation: wobble 6s ease-in-out alternate infinite, blob-three ease-in-out 16s infinite;
+}
+
+.blob:nth-child(4) {
+  width: 235px;
+  height: 235px;
+  bottom: -100%;
+  left: 20%;
+  animation: wobble 7s ease-in-out alternate infinite, blob-four ease-in-out 12s infinite;
+}
+
+.blob:nth-child(5) {
+  width: 55px;
+  height: 55px;
+  bottom: -100%;
+  left: 34%;
+  animation: wobble 9s ease-in-out alternate infinite, blob-five ease-in-out 32s infinite;
+}
+
+.blob:nth-child(6) {
+  width: 35px;
+  height: 35px;
+  bottom: -100%;
+  right: 34%;
+  animation: wobble 10s ease-in-out alternate infinite, blob-six ease-in-out 12s infinite;
+}
+
+.blob:nth-child(7) {
+  width: 435px;
+  height: 435px;
+  bottom: -100%;
+  right: 40%;
+  animation: wobble 11s ease-in-out alternate infinite, blob-seven ease-in-out 32s infinite;
+}
+
+.blob:nth-child(8) {
+  height: 100px;
+  width: 100px;
+  bottom: -100%;
+  animation: wobble 12s ease-in-out alternate infinite, blob-seven ease-in-out 12s infinite;
+}
+
+@keyframes blob-one {
+  0%, 100% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-700%);
+  }
+}
+@keyframes blob-two {
+  0%, 100% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-420%);
+  }
+}
+@keyframes blob-three {
+  0%, 100% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-305%);
+  }
+}
+@keyframes blob-four {
+  0%, 100% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-605%);
+  }
+}
+@keyframes blob-five {
+  0%, 100% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-700%);
+  }
+}
+@keyframes blob-six {
+  0%, 100% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-700%);
+  }
+}
+@keyframes blob-seven {
+  0%, 100% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-300%);
+  }
+}
+@keyframes wobble {
+  50% {
+    border-radius: 42% 58% 70% 30%/45% 45% 55% 55%;
+  }
+  100% {
+    border-radius: 38% 52% 75% 36%/50% 40% 50% 60%;
+  }
+}
+.nav .menu {
+  position: relative;
+  z-index: 1003; /* Добавьте это */
+  pointer-events: auto !important;
+  background-color: white;
+}
+.nav #menu-list {
+  visibility: hidden;
+  flex-direction: column;
+  position: absolute;
+  text-align: left;
+  list-style-type: none;
+  display: flex;
+  background-color: white;
+  opacity: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 10px;
+  transform: translateY(-20px);
+  margin-left: 1.25%;
+}
+.nav #menu-list li {
+  text-align: left;
+  background: black;
+  -webkit-background-clip: text;
+  background-clip: none;
+  -webkit-text-fill-color: transparent;
+  color: black;
+  display: table;
+  padding-left: 1%;
+  font-size: 20px;
+  background-size: 150% 150%;
+  animation: gradient-text 10s ease-in-out infinite;
+  transform: translate3d(0, 0, 0);
+}
+.nav #menu-list li a {
+  z-index: infinite;
+}
+.nav #menu-list.active {
+  visibility: visible;
+  z-index: infinite;
+  display: block;
+  animation: fadeInDowner 0.3s ease-in-out forwards;
+}
+.nav #menu-list.closing {
+  animation: fadeInUpper 0.3s ease-in-out forwards;
+}
+.nav button {
+  background: none;
+  outline: inherit;
+  font: inherit;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+.nav .menu-btn {
+  font-family: initial !important;
+  width: auto;
+  margin-left: 1.75%;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+  will-change: transform;
+  font-size: 60px;
+  font-weight: normal;
+}
+.nav .menu-btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeInUpper {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+@keyframes fadeInDowner {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.block {
+  animation: fadeInDowner 0.95s ease-in-out forwards;
+}
+
+.cont {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 340px;
+}
+.cont .block {
+  position: relative;
+  margin: 50px;
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  background-color: white;
+  border: 10px;
+}
+.cont .block h2 {
+  text-align: center;
+  margin: 0 0 15px 0;
+  font-size: 1.4em;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 8px;
+}
+.cont .block h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.32px;
+  background: linear-gradient(90deg, #db9513 40%, black 60%);
+}
+.cont .block:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.cont .block:nth-child(2) {
+  animation-delay: 0.35s;
+}
+.cont .block:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.cont .block:nth-child(4) {
+  animation-delay: 0.65s;
+}
+
+.primer, .primer2 {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: #fff3cd;
+  border-radius: 6px;
+  padding: 0 15px;
+  margin-top: 10px;
+  color: #856404;
+}
+
+.block:hover .primer {
+  max-height: 100px;
+  opacity: 1;
+  padding: 15px;
+}
+.block:hover .primer2 {
+  max-height: 300px;
+  opacity: 1;
+  padding: 15px;
+}
+
+body {
+  font-family: "Montserrat", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+.pyramid {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.p-block {
+  width: 90%;
+  max-width: 800px;
+  background: rgb(255, 255, 255);
+  border: 1.4px solid rgba(0, 0, 0, 0.87);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+
+.p-block:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.p-block h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.p-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.p-block ul li {
+  font-size: 1.3rem;
+}
+
+.p-level:nth-child(odd) {
+  float: left;
+}
+
+/* Анимации */
+@keyframes pyramidEntry {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.p-level {
+  animation: pyramidEntry 0.6s ease-out backwards;
+}
+
+.gg .lamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  min-width: 100vw;
+  z-index: -200;
+}
+.gg .lava {
+  filter: url("#goo");
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.gg .blob {
+  filter: blur(15px);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.27);
+  position: absolute;
+}
+.gg .blob:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  left: 5%;
+  bottom: -10%;
+  animation: wobble 4s ease-in-out alternate infinite, blob-one ease-in-out 13s infinite;
+}
+.gg .blob:nth-child(2) {
+  width: 330px;
+  height: 330px;
+  right: 10%;
+  bottom: -10%;
+  animation: wobble 5s ease-in-out alternate infinite, blob-two ease-in-out 22s infinite;
+}
+.gg .blob:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  bottom: -10%;
+  left: 89%;
+  animation: wobble 6s ease-in-out alternate infinite, blob-three ease-in-out 16s infinite;
+}
+.gg .blob:nth-child(4) {
+  width: 235px;
+  height: 235px;
+  bottom: -10%;
+  left: 20%;
+  animation: wobble 7s ease-in-out alternate infinite, blob-four ease-in-out 12s infinite;
+}
+.gg .blob:nth-child(5) {
+  width: 55px;
+  height: 55px;
+  bottom: -10%;
+  left: 34%;
+  animation: wobble 9s ease-in-out alternate infinite, blob-five ease-in-out 32s infinite;
+}
+.gg .blob:nth-child(6) {
+  width: 35px;
+  height: 35px;
+  bottom: -10%;
+  right: 34%;
+  animation: wobble 10s ease-in-out alternate infinite, blob-six ease-in-out 12s infinite;
+}
+.gg .blob:nth-child(7) {
+  width: 435px;
+  height: 435px;
+  bottom: -10%;
+  right: 40%;
+  animation: wobble 11s ease-in-out alternate infinite, blob-seven ease-in-out 32s infinite;
+}
+.gg .blob:nth-child(8) {
+  height: 100px;
+  width: 100px;
+  bottom: -10%;
+  animation: wobble 12s ease-in-out alternate infinite, blob-seven ease-in-out 12s infinite;
+}
+
+.prim-cont {
+  height: 120vh;
+  text-align: center;
+  width: 100%;
+  margin-top: 25px;
+  flex-direction: row; /* Горизонтальное размещение: слева направо */
+  justify-content: space-between; /* Отодвигает .left и .right по краям */
+}
+.prim-cont .prim-block {
+  position: relative;
+  margin: 30px;
+  display: block;
+  width: 450px;
+  margin-top: 50px;
+  height: 600px;
+  background: white;
+  border-radius: 10px;
+  padding: 50px;
+  transition: all 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.prim-cont .prim-block h6 {
+  font-style: normal;
+  font-size: 30px;
+  text-align: center;
+}
+.prim-cont .right {
+  height: 490px;
+  right: 15%;
+  position: absolute;
+}
+.prim-cont .left {
+  height: 490px;
+  left: 10%;
+  position: absolute;
+}
+.prim-cont .left, .prim-cont .right {
+  text-align: justify;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Чтобы блоки внутри шли вертикально */
+  width: -moz-max-content;
+  width: max-content;
+}
+.prim-cont .prim-img {
+  text-align: center;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: #fff3cd;
+  border-radius: 6px;
+  margin-top: 10px;
+  color: #856404;
+}
+.prim-cont .prim-img img {
+  width: auto;
+  height: 200px;
+  border-radius: 8px;
+}
+.prim-cont .prim-block:hover .prim-img {
+  max-height: -moz-max-content;
+  max-height: max-content;
+  opacity: 1;
+  padding: 15px;
+}
+.prim-cont .prim-block:hover .left, .prim-cont .prim-block:hover .right {
+  height: 690px;
+}/*# sourceMappingURL=styles.css.map */
